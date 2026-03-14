@@ -42,7 +42,7 @@ os.environ.setdefault("RAZORPAY_WEBHOOK_SECRET",  "rzp_test_webhook_secret")
 os.environ.setdefault("WHATSAPP_API_TOKEN",       "test_whatsapp_token")
 os.environ.setdefault("WHATSAPP_PHONE_NUMBER_ID", "test_phone_id")
 os.environ.setdefault("OPENAI_API_KEY",           "sk-test-key")
-os.environ.setdefault("ADMIN_WHATSAPP_NUMBER",    "9999999999")
+os.environ.setdefault("ADMIN_WHATSAPP_NUMBER",    "+919999999999")
 
 from app.config.constants import PaymentStatus                          # noqa: E402
 from app.payments.payment_service import (                              # noqa: E402
