@@ -97,7 +97,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         extra={
             "service": ServiceName.API,
             "version": settings.APP_VERSION,
-            "environment": settings.ENVIRONMENT,
+            "environment": settings.APP_ENV,
         },
     )
 
