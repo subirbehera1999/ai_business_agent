@@ -319,7 +319,7 @@ async def disconnect_database() -> None:
 # ==============================================================================
 # Raw Connection Accessor (for Alembic migrations and admin scripts only)
 # ==============================================================================
-
+@asynccontextmanager
 async def get_raw_connection() -> AsyncGenerator[AsyncConnection, None]:
     """
     Yield a raw async connection from the engine pool.
