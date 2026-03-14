@@ -52,6 +52,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.config.constants import ServiceName
 from app.payments.payment_service import PaymentService, WebhookProcessResult
 from app.payments.razorpay_client import RazorpayClient
+import json
 
 logger = logging.getLogger(ServiceName.PAYMENTS)
 
@@ -247,7 +248,6 @@ class RazorpayWebhookHandler:
         # Step 4: Parse JSON payload (only after signature verified)
         # ------------------------------------------------------------------
         try:
-            import json
             payload: dict = json.loads(raw_body)
         except (json.JSONDecodeError, ValueError) as exc:
             logger.error(
@@ -377,7 +377,6 @@ async def verify_and_parse_webhook(
         - is_valid=True, parsed_payload=dict, error_message=None  → success
         - is_valid=False, parsed_payload=None, error_message=str  → failure
     """
-    import json
 
     try:
         raw_body = await request.body()
